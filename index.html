@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mark Evola</title>
+    <meta name="description" content="Mark Evola's Website" />
+    <meta name="author" content="Mark Evola" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>Mark Evola</h1>
+      <p>Welcome to my site. See below for more information about me.</p>
+
+      <img
+        id="portrait"
+        src="https://media.licdn.com/dms/image/v2/D5603AQEE0TeC1ePxuA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1684897191424?e=1755734400&v=beta&t=SPEpDgWoQCdtiLjVVLR1Wy02NUi0Fd9EBpe3p_aS-qA"
+      />
+    </header>
+    <hr />
+    <main>
+      <h2>Introduction</h2>
+      <ul>
+        <li>
+          I am currently a junior at
+          <a href="https://txst.edu" target="_blank" rel="noreferrer"
+            >Texas State University</a
+          >
+          majoring in Computer Science and minoring in Applied Mathematics.
+        </li>
+        <li>
+          My main career goals consist of becoming a <i>Systems Engineer</i>,
+          with others including <i>DevOps Engineer</i>, <i>Backend Engineer</i>,
+          and <i>Cybersecurity Engineer</i>.
+        </li>
+        <li>
+          I am currently the maintainer of the web-app
+          <a
+            href="https://github.com/MarkE16/LiveCanvas"
+            target="_blank"
+            rel="noreferrer"
+            >IdeaDrawn</a
+          >, an upcoming startup that consists of bringing the features of
+          real-time collaborative editing in canvas editing.
+        </li>
+        <li>
+          Outside of work, I enjoy reading, weight-training, cycling, listening
+          to music, and a lot more that won&apos;t fit the list.
+        </li>
+      </ul>
+      <h2>Experience</h2>
+      <ul id="experience-list"></ul>
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/MarkE16/LiveCanvas"
+            target="_blank"
+            rel="noreferrer"
+            >IdeaDrawn</a
+          >
+          - A real-time art collaboration tool.
+        </li>
+        <li>
+          <a
+            href="https://github.com/sorm-conference-app/conference-app"
+            target="_blank"
+            rel="noreferrer"
+            >SORM Conference Mobile App</a
+          >
+          - A mobile app designed for the SORM Symposium taking place August
+          13th - 15th, 2025.
+        </li>
+      </ul>
+      <h2>Let&apos;s connect</h2>
+      <ul>
+        <li>
+          <a
+            href="https://linkedin.com/in/mark-evola"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/MarkE16" target="_blank" rel="noreferrer"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://instagram.com/markryan_57"
+            target="_blank"
+            rel="noreferrer"
+            >Instagram</a
+          >
+        </li>
+      </ul>
+    </main>
+    <footer>
+      &COPY; <i>Mark Evola <span id="year"></span>, All Rights Reserved.</i>
+    </footer>
+  </body>
+  <style>
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #portrait {
+      width: 80px;
+      height: 80px;
+    }
+
+    #header > h1,
+    #header > p {
+      display: inline-block;
+    }
+  </style>
+  <script>
+    const EXPERIENCE = [
+      {
+        title: "Student Participant",
+        company: "Code2College",
+        start: "May 2020",
+        end: "May 2023",
+        url: "https://code2college.org/",
+      },
+      {
+        title: "Software Engineering Intern",
+        company: "Code2College",
+        start: "June 2021",
+        end: "August 2021",
+        url: "https://code2college.org/",
+      },
+      {
+        title: "Software Engineering Intern",
+        company: "Auctane",
+        start: "June 2022",
+        end: "August 2022",
+        url: "https://auctane.com/",
+      },
+      {
+        title: "Software Engineering Intern",
+        company: "Arrive Logistics",
+        start: "June 2023",
+        end: "August 2023",
+        url: "https://arrivelogistics.com/",
+      },
+    ];
+    let experienceList;
+    let footerYear;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      footerYear = document.getElementById("year");
+      experienceList = document.getElementById("experience-list");
+
+      footerYear.innerText = new Date().getFullYear();
+
+      for (let i = EXPERIENCE.length - 1; i >= 0; i--) {
+        const entry = EXPERIENCE[i];
+        const element = document.createElement("li");
+
+        element.innerHTML = `<i>${entry.title}</i> - <a href="${entry.url}" target="_blank" rel="noreferrer">${entry.company}</a> (<i>${entry.start}</i> - <i>${entry.end}</i>)`;
+
+        experienceList.appendChild(element);
+      }
+    });
+  </script>
+</html>
